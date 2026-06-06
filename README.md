@@ -16,6 +16,7 @@ The subtree used for lineage detection analysis, containing only Thai sequences 
 
 ### Lineage detection results
 The output files generated from the lineage detection analysis, using the implementation provided in the accompanying code file. 
+
 `dataset_with_nodes_phylowave.rds`
 
 `sequence_collection_info.rds`
