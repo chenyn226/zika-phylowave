@@ -19,7 +19,7 @@ The output files generated from the lineage detection analysis, using the implem
 
 `dataset_with_nodes_phylowave.rds`
 
-`sequence_collection_info.rds`
+`split_phylowave.rds`
 
 ## Code
 
