@@ -1,6 +1,6 @@
 # ZIKV evolutionary dynamics
-## Data
-### Sequence data
+## 1. Data
+### 1.1 Sequence data
 `thai_fp_brazil_sequences_align.fasta`:
 This file contains the aligned ZIKV sequences used for analysis in this study. Sequence names are formatted as the original sequence accession ID, followed by an underscore (_) and the sequence collection date.
 
@@ -8,20 +8,20 @@ This file contains the aligned ZIKV sequences used for analysis in this study. S
 
 This metadata file contains the original accession ID, updated sequence ID used in the FASTA file, sequence collection date, country of collection, institutions generating the sequences, and factors related to sequence generation process. 
 
-### Time-resolved phylogenetic trees
+### 1.2 Time-resolved phylogenetic trees
 
 `time_tree.treefile`: The time-resolved phylogenetic tree for sequences from Thailand, French Polynesia and Brazil.
 
 `thai_time_tree.treefile`: The subtree used for lineage detection analysis, containing only Thai sequences and excluding six sequences as described in the manuscript draft.
 
 
-## Step by step instructions running the analysis
+## 2. Step by step instructions running the analysis
 - Software requirements for all analysis
   
   - Step 1. Install `R`.
   - Step 2. Install `RStudio` or another R-compatible development environment.
 
-### Lineage detection
+### 2.1 Lineage detection
 - Software requirement
   
   - Install the required R packages: `phytools`, `data.table`.
@@ -42,7 +42,7 @@ This metadata file contains the original accession ID, updated sequence ID used 
    
   Copies of these output files are also provided for reference and comparison.
 
-### Viral fitness estimation
+### 2.2 Viral fitness estimation
 - Software requirement
   
   - Install the required R packages: `phytools`, `data.table`, `cmdstanr`, `stringr`
@@ -67,7 +67,7 @@ This metadata file contains the original accession ID, updated sequence ID used 
 
   Copies of these output files are also provided for reference and comparison.
 
-### Figure generation
+### 2.3 Figure generation
 
 - Software requirement
   
