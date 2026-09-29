@@ -1,40 +1,41 @@
 # ZIKV evolutionary dynamics
 ## Data
-### ZIKV sequence data
 `thai_fp_brazil_sequences_align.fasta`:
 This file contains the aligned ZIKV sequences used for analysis in this study. Sequence names are formatted as the original sequence accession ID, followed by an underscore (_) and the sequence collection date.
 
-`sequence_collection_info.rds`:
-This metadata file contains the original accession ID, updated sequence ID used in the FASTA file, sequence collection date, and country of collection for each sequence. 
+`ZIKV_sequence_metadata.xlsx`: Supplementary Data S1
+This metadata file contains the original accession ID, updated sequence ID used in the FASTA file, sequence collection date, country of collection, institutions generating the sequences, and factors related to sequence generation process. 
 
-### Time-resolved phylogenetic trees
-`time_tree.treefile`:
-The time-resolved phylogenetic tree for sequences from Thailand, French Polynesia and Brazil.
+## Step by step instructions running the analysis
+- Software requirements for all analysis
+Step 1. Install `R`
+Step 2. Install `RStudio` or another `R`-compatible development environment.
 
-`thai_time_tree.treefile`:
-The subtree used for lineage detection analysis, containing only Thai sequences and excluding six sequences as described in the manuscript draft.
+### Lineage detection
+- Software requirement
+Install the required `R` packages: `phytools`, `data.table`
 
-### Lineage detection results
-The output files generated from the lineage detection analysis, using the implementation provided in the accompanying code file. 
+- File requirement
+The following files are required and are provided in this repository.
 
-`dataset_with_nodes_phylowave.rds`
+Phylowave codebase files (_Lefrancq, Noémie, et al., Nature_): `2_1_Index_computation_20251129.R`, `2_2_Lineage_detection_20260127.R`
 
-`split_phylowave.rds`
+Input tree file: `thai_time_tree.treefile`
 
-## Code
+Analysis script: `phylowave_zikv.R`
 
-### Files loaded from phylowave codebase
-_Lefrancq, Noémie, et al. "Learning the fitness dynamics of pathogens from phylogenies." Nature 637.8046 (2025): 683-690._
+- To run the lineage detection algorithm:
 
-`2_1_Index_computation_20251129.R`
+Step 1. Ensure that the required `R` packages are installed. 
 
-`2_2_Lineage_detection_20260127.R`
+Step 2. Open `phylowave_zikv.R` in `RStudi`o and run the `R` script.
 
-### Lineage detection algorithm implementation
-`phylowave_zikv.R`
+Step 3. The analysis will generate the following output files in the working directory: `split_phylowave.rds`, `dataset_with_nodes_phylowave.rds`.
 
-### Viral fitness estimation 
-`fitness_estimation.R`
+Copies of these output files are also provided for reference and comparison.
+
+
+
 
 `Model_lineage_fitness_tstart.stan`
 
