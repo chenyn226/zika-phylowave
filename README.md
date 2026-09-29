@@ -1,6 +1,7 @@
 # ZIKV evolutionary dynamics
 ## 1. Data
-### 1.1 Sequence data
+### 1.1. Sequence data
+
 `thai_fp_brazil_sequences_align.fasta`:
 This file contains the aligned ZIKV sequences used for analysis in this study. Sequence names are formatted as the original sequence accession ID, followed by an underscore (_) and the sequence collection date.
 
@@ -8,7 +9,7 @@ This file contains the aligned ZIKV sequences used for analysis in this study. S
 
 This metadata file contains the original accession ID, updated sequence ID used in the FASTA file, sequence collection date, country of collection, institutions generating the sequences, and factors related to sequence generation process. 
 
-### 1.2 Time-resolved phylogenetic trees
+### 1.2. Time-resolved phylogenetic trees
 
 `time_tree.treefile`: The time-resolved phylogenetic tree for sequences from Thailand, French Polynesia and Brazil.
 
@@ -16,12 +17,14 @@ This metadata file contains the original accession ID, updated sequence ID used 
 
 
 ## 2. Step by step instructions running the analysis
+
 - Software requirements for all analysis
   
   - Step 1. Install `R`.
   - Step 2. Install `RStudio` or another R-compatible development environment.
 
-### 2.1 Lineage detection
+### 2.1. Lineage detection
+
 - Software requirement
   
   - Install the required R packages: `phytools`, `data.table`.
@@ -36,13 +39,14 @@ This metadata file contains the original accession ID, updated sequence ID used 
 
 - To run the lineage detection algorithm:
   
-  - Step 1. Ensure that the required R packages are installed.
+  - Step 1. Ensure that the required R packages are installed and that all required files are available in the R working directory.
   - Step 2. Open `phylowave_zikv.R` in RStudio and run the R script.
   - Step 3. The analysis will generate the following output files in the working directory: `split_phylowave.rds`, `dataset_with_nodes_phylowave.rds`.
    
   Copies of these output files are also provided for reference and comparison.
 
-### 2.2 Viral fitness estimation
+### 2.2. Viral fitness estimation
+
 - Software requirement
   
   - Install the required R packages: `phytools`, `data.table`, `cmdstanr`, `stringr`
@@ -58,7 +62,7 @@ This metadata file contains the original accession ID, updated sequence ID used 
 
 - To run the fitness estimation:
   
-  - Step 1. Ensure that the required R packages are installed. 
+  - Step 1. Ensure that the required R packages are installed and that all required files are available in the R working directory.
   - Step 2. Open `fitness_estimation.R` in RStudio and run the R script.
   - Step 3. The analysis will generate the following output file in the working directory:   
     The stan model output: `res_fitness.rds`  
@@ -67,7 +71,7 @@ This metadata file contains the original accession ID, updated sequence ID used 
 
   Copies of these output files are also provided for reference and comparison.
 
-### 2.3 Figure generation
+### 2.3. Figure generation
 
 - Software requirement
   
@@ -77,7 +81,7 @@ This metadata file contains the original accession ID, updated sequence ID used 
   
   The following files are required and are provided in this repository `figures` folder.
   
-  - Input tree file: `time_tree.treefile`, `thai_time_tree.treefile`
+  - Tree file: `time_tree.treefile`, `thai_time_tree.treefile`
   - Sequence meta data: `ZIKV_sequence_metadata.xlsx`
   - Lineage detection output: `dataset_with_nodes_phylowave.rds`
   - Fitness estimation output: `figuredata_fitness_est.rds`, `figuredata_fitness_data.rds`, 
@@ -88,7 +92,7 @@ This metadata file contains the original accession ID, updated sequence ID used 
 
 - To generate the figures in main manuscript:
   
-  - Step 1. Ensure that the required R packages are installed. 
+  - Step 1. Ensure that the required R packages are installed and that all required files are available in the R working directory.
   - Step 2. Open `figures.R` in RStudio and run the R script.
   - Step 3. The analysis will generate the 3 figures in main manuscript.
 
