@@ -18,11 +18,11 @@ This metadata file contains the original accession ID, updated sequence ID used 
 ## Step by step instructions running the analysis
 - Software requirements for all analysis
   - Step 1. Install `R`.
-  - Step 2. Install `RStudio` or another `R`-compatible development environment.
+  - Step 2. Install `RStudio` or another R-compatible development environment.
 
 ### Lineage detection
 - Software requirement
-  - Install the required `R` packages: `phytools`, `data.table`.
+  - Install the required R packages: `phytools`, `data.table`.
 
 - File requirement  
   The following files are required and are provided in this repository `lineage detection` folder.
@@ -32,10 +32,33 @@ This metadata file contains the original accession ID, updated sequence ID used 
   - Analysis script: `phylowave_zikv.R`
 
 - To run the lineage detection algorithm:
-  - Step 1. Ensure that the required `R` packages are installed.
-  - Step 2. Open `phylowave_zikv.R` in `RStudi`o and run the `R` script.
+  - Step 1. Ensure that the required R packages are installed.
+  - Step 2. Open `phylowave_zikv.R` in RStudio and run the R script.
   - Step 3. The analysis will generate the following output files in the working directory: `split_phylowave.rds`, `dataset_with_nodes_phylowave.rds`.  
   Copies of these output files are also provided for reference and comparison.
+
+### Viral fitness estimation
+- Software requirement
+  - Install the required R packages: `phytools`, `data.table`, `cmdstanr`, `stringr`
+
+- File requirement  
+  The following files are required and are provided in this repository `fitness estimation` folder.
+  - Input tree file: `thai_time_tree.treefile`
+  - Input Phylowave results file (output from running the lineage detection): `dataset_with_nodes_phylowave.rds`
+  - Bayesian model stan file: `Model_lineage_fitness_tstart.stan`
+  - Analysis script: `fitness_estimation.R`
+
+- To run the fitness estimation:
+  - Step 1. Ensure that the required R packages are installed. 
+  - Step 2. Open `fitness_estimation.R` in RStudio and run the R script.
+  - Step 3. The analysis will generate the following output file in the working directory:   
+    The stan model output: `res_fitness.rds`  
+    The posterior estimates of fitness: `figuredata_fitness_est.rds`, `figuredata_fitness_data.rds`, 
+`relative_fitness_refgroup1.rds`, `relative_fitness_refparent.rds`, `relative_fitness_refgroup2.rds`, `time_varying_fitness.rds`  
+  Copies of these output files are also provided for reference and comparison.
+
+
+
 
 
 
